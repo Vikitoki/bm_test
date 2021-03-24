@@ -129,7 +129,6 @@ $(function ($) {
 });
 
 const MainPage = ({ coordinats, setZoomImg, zoom }) => {
-  console.log(zoom);
   const img = useRef(null);
   const [clientX, setClientX] = useState(null);
   const [clientY, setClientY] = useState(null);
