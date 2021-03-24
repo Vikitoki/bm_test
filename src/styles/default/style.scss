@@ -1,0 +1,35 @@
+@import './variables.scss';
+
+// <ПОДКЛЮЧЕНИЕ ШРИФТОВ>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap');
+// </ПОДКЛЮЧЕНИЕ ШРИФТОВ>
+
+//<ШРИФТ ПО УМОЛЧАНИЮ>
+$fontFamily: "Roboto";
+//</ШРИФТ ПО УМОЛЧАНИЮ>
+
+//<ПОДКЛЮЧЕНИЕ ОБЯЗАТЕЛЬНЫХ SCSS КОМПОНЕНТОВ>
+@import "./null.scss";
+//</ПОДКЛЮЧЕНИЕ ОБЯЗАТЕЛЬНЫХ SCSS КОМПОНЕНТОВ>
+
+//<ОБОЛОЧКА>
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  &.loaded {
+  }
+}
+//</ОБОЛОЧКА>
+
+//<ОСНОВНАЯ СЕТКА>
+.container {
+  max-width: $maxWidthContainer + px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 15px;
+}
+//</ОСНОВНАЯ СЕТКА>

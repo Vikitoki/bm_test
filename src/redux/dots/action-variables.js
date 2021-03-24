@@ -1,0 +1,3 @@
+const CREATE_NEW_DOT = "CREATE_NEW_DOT";
+
+export { CREATE_NEW_DOT };

@@ -1,0 +1,35 @@
+@import "../default/variables.scss";
+
+// Btn ========================================================
+.btn {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 15px 40px;
+
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+
+  background: none;
+  border: none;
+  border-radius: 10px;
+
+  cursor: pointer;
+  transition: color 0.2s ease, background-color 0.2s ease;
+
+  &_blue {
+    border: 2px solid #fff;
+    background-color: rgb(110, 95, 241);
+
+    @media (min-width: $md2 + px) {
+      &:hover {
+        background-color: rgb(86, 70, 224);
+      }
+
+      &:active {
+        background-color: rgb(64, 46, 230);
+      }
+    }
+  }
+}
