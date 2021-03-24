@@ -16,10 +16,7 @@ const MainPage = ({ coordinats }) => {
     top: 0,
   });
 
-  console.log(clientY, clientX);
-
   useEffect(() => {
-    console.log(coordinats);
     img.current.addEventListener("mousemove", function (event) {
       setClientX(event.clientX);
       setClientY(event.clientY);
@@ -30,8 +27,8 @@ const MainPage = ({ coordinats }) => {
     if (!visiblePopup) {
       setStyleCoordinatePopup({
         ...styleCoordinatePopup,
-        left: clientX - 210,
-        top: clientY - 100 ,
+        left: clientX - 220,
+        top: clientY - 100,
       });
     }
     setTimeout(() => {
@@ -56,8 +53,14 @@ const MainPage = ({ coordinats }) => {
         />
       </div>
       {coordinats.length > 0
-        ? coordinats.map((item) => {
-            return <Dot key={Math.random()} coordinate={item} />;
+        ? coordinats.map((item, index) => {
+            return (
+              <Dot
+                key={Math.random()}
+                index={index}
+                coordinate={item}
+              />
+            );
           })
         : null}
     </div>
@@ -66,6 +69,7 @@ const MainPage = ({ coordinats }) => {
 
 const mapStateToProps = (state) => ({
   coordinats: state.dots.coordinats,
+  dotsColor: state.dots.dotsColor,
 });
 
 export default connect(mapStateToProps)(MainPage);

@@ -1,9 +1,10 @@
-import { CREATE_NEW_DOT } from "./action-variables";
+import { CREATE_NEW_DOT, SET_COLOR_TO_DOT } from "./action-variables";
 
 const initialState = {
   coordinats: [],
   currentValue: 0,
   dotsId: [],
+  dotsColor: {},
 };
 
 const dotsReducer = (state = initialState, action) => {
@@ -12,9 +13,18 @@ const dotsReducer = (state = initialState, action) => {
       return {
         ...state,
         coordinats: [...state.coordinats, action.payload],
+        dotsColor: { ...state.dotsColor, [state.currentValue]: "red" },
         currentValue: state.currentValue + 1,
         dotsId: [...state.dotsId, Math.random() * 10],
       };
+    case SET_COLOR_TO_DOT:
+      const [index, color] = action.payload;
+
+      return {
+        ...state,
+        dotsColor: { ...state.dotsColor, [index]: color },
+      };
+    case CREATE_NEW_DOT:
     default:
       return state;
   }
