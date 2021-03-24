@@ -1,4 +1,4 @@
-import { CREATE_NEW_DOT, SET_COLOR_TO_DOT } from "./action-variables";
+import { CREATE_NEW_DOT, SET_COLOR_TO_DOT, SET_ZOOM } from "./action-variables";
 
 const createNewDot = (coordinates) => ({
   type: CREATE_NEW_DOT,
@@ -10,4 +10,8 @@ const setColorToDot = (index, color) => ({
   payload: [index, color],
 });
 
-export { createNewDot, setColorToDot };
+const setZoom = () => ({
+  type: SET_ZOOM,
+});
+
+export { createNewDot, setColorToDot, setZoom };

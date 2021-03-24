@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import { setColorToDot } from "../../redux/dots/action-creators";
 
@@ -18,7 +18,7 @@ const Dot = ({ coordinate, index, dotsColor, setColorToDot }) => {
   };
 
   return (
-    <div style={{ left: left - 15, top: top + 35 }} className="dot">
+    <div style={{ left: left - 85, top: top + 10 }} className="dot">
       <div
         onClick={handleVisible}
         className="dot__body"

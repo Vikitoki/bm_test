@@ -1,10 +1,11 @@
-import { CREATE_NEW_DOT, SET_COLOR_TO_DOT } from "./action-variables";
+import { CREATE_NEW_DOT, SET_COLOR_TO_DOT, SET_ZOOM } from "./action-variables";
 
 const initialState = {
   coordinats: [],
   currentValue: 0,
   dotsId: [],
   dotsColor: {},
+  zoom: false,
 };
 
 const dotsReducer = (state = initialState, action) => {
@@ -24,7 +25,11 @@ const dotsReducer = (state = initialState, action) => {
         ...state,
         dotsColor: { ...state.dotsColor, [index]: color },
       };
-    case CREATE_NEW_DOT:
+    case SET_ZOOM:
+      return {
+        ...state,
+        zoom: !state.zoom,
+      };
     default:
       return state;
   }
