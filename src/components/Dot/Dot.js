@@ -18,7 +18,7 @@ const Dot = ({ coordinate, index, dotsColor, setColorToDot }) => {
   };
 
   return (
-    <div style={{ left: left - 85, top: top + 10 }} className="dot">
+    <div style={{ left: left + 40, top: top - 50 }} className="dot">
       <div
         onClick={handleVisible}
         className="dot__body"

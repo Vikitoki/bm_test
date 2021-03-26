@@ -10,9 +10,7 @@
 
   &__content {
     display: flex;
-    flex-direction: column;
-    flex: 1 1 auto;
-		width: 100%;
-    max-width: 1300px;
+    align-items: center;
+    width: 100%;
   }
 }
